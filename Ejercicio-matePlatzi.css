@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 65vh;
+    padding: 1vw;
+    background: #ddd;
+}
+.main{
+    width: 80vw;
+    height: 22vw;
+    margin-inline: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.main__content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 8vw;
+}
+.main--form{
+    display: inline-block;
+    width: max(400px, 41vw);
+    height: max(253px, 21vw);
+    background: #fff;
+}
+.main--form__content{
+    position: relative;
+    width: 132%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+}
+.main--form__content h1{
+    font-size: max(10px, 1.7vw);
+}
+.main--form__content span{
+    font-size: max(11px, 1.3vw);
+}
+.main--form__content input{
+    width: max(117px, 17vw);
+    height: max(1.6vw, 20px);
+    border-radius: 2vw;
+    font-size: max(11px, 1vw);
+}
+.main--form__content button{
+    width: max(8vw, 68px);
+    height: max(3vw, 30px);
+    margin: max(1vw, 10px);
+    border-radius: 2vw;
+    font-size: max(11px, 1vw);
+}
+.main--form__content .pBorrowing{
+    font-size: max(11px, 1vw);
+}
+.main--form__content .pBorrowingGeneral{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max(8vw, 106px);
+    height: max(3vw, 33px);
+    margin: 0;
+    border-radius: 0;
+}
+.main--arrow{
+    display: flex;
+    align-items: center;
+    width: 27vw;
+    margin-left: 11vw;
+    justify-content: flex-end;
+}
+.arrow__content{
+    position: relative;
+    width: 18vw;
+    height: 2vw;
+    border-radius: 2vw;
+    background: white;
+}
+.arrow{
+    position: absolute;
+    right: 0;
+
+    width: 40%;
+    height: 100%;
+    transform-origin: 87% 50%;
+    transform: rotateZ(calc(45deg * var(--i)));
+    border-radius: max(2vw, 20px);
+    background-color: darkred;
+}
+.main--persons{
+    display: inline-block;
+    height: 20vw;
+    background-color: rgb(146, 139, 139);
+}
+.persons{
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+.persons__titles{
+    display: inline-block;
+    height: 100%;
+}
+.persons__titles__content{
+    display: grid;
+    grid-auto-columns: 10vw;
+    height: 100%;
+}
+.titles__p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: lightsalmon;
+    border: 1px solid black;
+    font-size: max(11px, 1vw);
+}
+.persons__information{
+    display: inline-block;
+    height: 100%;
+}
+.persons__information__content{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 151vw;
+    height: 100%;
+}
+.names{
+    background-color: lightseagreen;
+}
+.salary{
+    background-color: lightgreen;
+}
+.borrowing{
+    background-color: lightsalmon;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+}
+.grid p{
+    display: flex;
+    align-items: center;
+    padding: 0.5vw;
+    border: 1px solid black;
+    overflow: hidden;
+    font-size: max(11px, 1vw);
+}
+
+
+/* .main-table div{
+    display: flex;
+    flex: 1 1 auto;
+
+    background-color: lightcoral;
+} */
+
+
+@media (max-width: 800px) {
+    body{
+        height: 100vh;
+    }
+    .main{
+        height: 80vw;
+        min-height: 620px;
+    }
+    .main__content{
+        align-items: center;
+        flex-direction: column;
+        gap: max(14vw, 154px);
+    }
+    .main--form__content .pBorrowingGeneral{
+        right: calc(50% - max(3vw, 48px));
+    }
+    .main--form{
+        width: 70vw;
+        min-width: 190px;
+    }
+    .main--form__content{
+        width: 100%;
+        height: 288px;
+    }
+    .main--form__content > div{
+        width: 63%;
+        display: flex;
+        justify-content: center;
+        padding: 4px 4px 12px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .main--arrow{
+        width: 60vw;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .arrow__content{
+        min-width: 150px;
+        min-height: 17px;
+        transform: rotateZ(90deg);
+        border-radius: max(2vw, 20px);
+    }
+    .main--persons{
+        height: 80vw;
+    }
+    .persons{
+        flex-direction: column;
+    }
+    .persons__titles__content{
+        grid-template-columns: repeat(3, minmax(4vw, 174px));
+        grid-template-rows: minmax(43px, 7vw);
+    }
+    .persons__information__content{
+        grid-template-columns: repeat(3, minmax(4vw, 174px));
+        grid-template-rows: minmax(800px, 153vw);
+    }
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20, 1fr);
+    }
+}
